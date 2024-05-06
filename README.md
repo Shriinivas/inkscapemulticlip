@@ -1,4 +1,7 @@
 # Multi-clip Image Extension for Inkscape
+<p align="center">
+  <img src="https://github.com/Shriinivas/etc/blob/master/inkscapemulticlip/horse.gif" alt="Demo"/>
+</p>
 
 The Multi-clip Image extension for Inkscape allows users to use selected shapes to create clipping regions on a selected image. This extension adds functionality to manipulate images with various clipping paths, optionally delete the clipping paths, group clipped parts, add them below the path, and even animate the clipping results.
 
