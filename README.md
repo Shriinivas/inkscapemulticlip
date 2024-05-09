@@ -1,4 +1,5 @@
 # Multi-clip Image Extension for Inkscape
+
 <p align="center">
   <img src="https://github.com/Shriinivas/etc/blob/master/inkscapemulticlip/horse.gif" alt="Demo"/>
 </p>
