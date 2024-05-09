@@ -37,6 +37,8 @@ To use the Multi-clip Image extension:
 - **Add Below**: If enabled, the clipped image will be added below the path in the document's layer stack. This option is ignored if 'Delete Selection' is checked.
 - **Animate**: Adds a simple SVG translation animation to each clipped part, moving it from a random position to its current position. This feature can only be observed when the SVG is viewed in a browser.
 
+## [Video Tutorial](https://youtu.be/2XEb5q-T2xY)
+
 ## License
 
 This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
