@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-  <_name>Multi-clip Image</_name>
-  <id>org.khema.inkscape.extension.multiclip</id>
+  <_name>Multi-clip</_name>
+  <id>khema.multiclip</id>
   <param name="tab" type="notebook">
     <page gui-text="Configuration" name="fill_page">
-        <param gui-description="Delete selected shapes" gui-text="Delete Selection" name="delete_original" type="bool">false</param>
-        <param gui-description="Group the clipped part with its corresponding shape. This option is only effective if 'Delete Selection' is not checked." gui-text="Group with shape" name="group_with_shape" type="bool">false</param>
-        <param gui-description="Add clipped part below shape (ignored if 'Delete Selection' is checked)" gui-text="Add Below" name="add_below" type="bool">true</param>
+        <param gui-description="Delete clipping objects; keep only target" gui-text="Delete Clipping Objects:" name="delete_original" type="bool">true</param>
+        <param appearance="combo" gui-description="Whether to group clipped part with its clipping object (ignored if 'Delete Clipping Objects' is checked)" gui-text="Grouping:" name="grouping" type="optiongroup">
+          <option value="group">Group with Target Part</option>
+          <option value="separate">Keep Separate</option>
+        </param>
+        <param appearance="combo" gui-description="Add clipping object below or above target (ignored if 'Delete Clipping Objects' is checked)" gui-text="Clipping Object Position:" name="position" type="optiongroup">
+          <option value="below">Below</option>
+          <option value="above">Above</option>
+        </param>
         <param gui-description="Add simple animation (can only be tested in browser)" gui-text="Animate" name="animate" type="bool">false</param>
     </page>
     <page gui-text="Help" name="Help">
         <label xml:space="preserve">
-Select the shapes and the image to be clipped before invoking the extension. 
-The extension applies all the selected shapes as clipping regions on the first image within the selection.
-Uncheck 'Delete Selection' to keep the selected shapes  after applying the clipping.
-Checking the 'Group with shape' groups the shape with corresponding clipped image, this is considered only if Delete Selection is not checked.
-Checking the 'Add Below' adds the clipped image below the path, this is considered only if Delete Selection is not checked.
+Select all the clipping objects and the target to be clipped before invoking the extension. 
+Make sure the target is lowest in the z order.
+The extension applies all the selected shapes as clipping regions on the lowest object (target) within the selection.
+Uncheck 'Delete Clipping Objects' to keep the clipping objects  after applying the clipping.
+Select 'Group with Target Part' or 'Keep Separate' in Grouping combo to group or not group the clipping object with target part; this is considered only if Delete Clipping Objects is unchecked.
+Select 'Below' or 'Above' in Clipping Object Position combo to place the clipping object above or below the target part; this is considered only if Delete Clipping Objects is unchecked.
 'Animate' adds a simple SVG translate animation to the clipped parts, moving them from random position to the current position.
         </label>
     </page>
