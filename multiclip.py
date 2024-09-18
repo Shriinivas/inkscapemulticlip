@@ -99,6 +99,7 @@ class MulticlipEffect(inkex.Effect):
                 continue
             clip_path_id = self.add_clip_path(clipping_elem).get_id()
             parent = layer if delete_original else clipping_elem.getparent()
+            group = None
             if grouping == "group" and not delete_original:
                 group = inkex.Group()
                 group.set(
@@ -125,7 +126,7 @@ class MulticlipEffect(inkex.Effect):
                     clipping_elem.addnext(target_clone)
 
             if animate:
-                anim_parent = parent if grouping == "group" else target_clone
+                anim_parent = group if group is not None else target_clone
                 self.add_translate_anim(
                     anim_parent, anim_extent_min, anim_extent_max, anim_dur
                 )
