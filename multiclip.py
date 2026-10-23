@@ -90,6 +90,12 @@ class MulticlipEffect(inkex.Effect):
         layer = self.svg.get_current_layer()
 
         elems = self.svg.selection.rendering_order()
+        if len(elems) < 2:
+            inkex.errormsg(
+                "Select at least 2 objects: the first (bottom) is the target, "
+                "the others are the clipping shapes."
+            )
+            return
         target_elem = elems.pop(0)
         target_id = target_elem.get_id()
         first_elem = True
